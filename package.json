@@ -1,0 +1,125 @@
+{
+  "version": "0.0.0",
+  "name": "react-use-scroll-direction",
+  "description": "A react hook for detecting the scroll direction of the scrolling window or target element",
+  "author": "Ifeanyi Isitor",
+  "module": "dist/react-use-scroll-direction.esm.js",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "useInfiniteScroll",
+    "react infinite scroll",
+    "react infinite scroll hook",
+    "hook"
+  ],
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ifeanyiisitor/react-use-scroll-direction.git"
+  },
+  "homepage": "https://github.com/ifeanyiisitor/react-use-scroll-direction",
+  "np": {
+    "testScript": "test:all"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "start:example": "yarn build && cd example && yarn start",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests --coverage",
+    "test:cy:run": "start-server-and-test start:example http://localhost:1234 cy:run",
+    "test:cy:open": "start-server-and-test start:example http://localhost:1234 cy:open",
+    "test:all": "yarn build && yarn install:example && yarn test:cy:run",
+    "lint": "tsdx lint src",
+    "format": "prettier --write '**/*.{ts,tsx,js,jsx,json}'",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check '**/*.{ts,tsx,js,jsx,json}'",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "clean": "yarn clean:git && yarn clean:node_modules",
+    "clean:git": "git clean -fxd -e .vscode -e .env.local",
+    "clean:install": "yarn clean && yarn",
+    "clean:install:dev": "yarn clean:install && yarn dev",
+    "clean:hard": "yarn clean:lock && yarn clean && yarn clean:node_modules",
+    "clean:hard:install": "yarn clean:hard && yarn",
+    "clean:dist": "rm -rf **/dist",
+    "clean:lock": "rm **/yarn.lock && rm **/package-lock.json",
+    "clean:node_modules": "rm -rf **/node_modules",
+    "install:all": "yarn && yarn install:example",
+    "install:example": "cd example && yarn"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint && yarn check-types && yarn test && yarn test:cy:run"
+    }
+  },
+  "size-limit": [
+    {
+      "path": "dist/react-use-scroll-direction.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/react-use-scroll-direction.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "jsxBracketSameLine": true
+  },
+  "devDependencies": {
+    "@arkweid/lefthook": "^0.7.2",
+    "@babel/core": "^7.12.3",
+    "@material-ui/core": "^4.11.2",
+    "@size-limit/preset-small-lib": "^4.7.0",
+    "@storybook/addon-essentials": "^6.1.0-beta.4",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-links": "^6.1.0-beta.4",
+    "@storybook/addons": "^6.1.0-beta.4",
+    "@storybook/react": "^6.1.0-beta.4",
+    "@testing-library/react-hooks": "^3.4.2",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "@types/react-window": "^1.8.2",
+    "@types/styled-components": "^5.1.7",
+    "@types/testing-library__react-hooks": "^3.4.1",
+    "babel-loader": "^8.1.0",
+    "cypress": "^6.2.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.0",
+    "prettier": "^1.19.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-is": "^17.0.1",
+    "react-test-renderer": "^17.0.1",
+    "react-window": "^1.8.6",
+    "scheduler": "^0.20.1",
+    "size-limit": "^4.7.0",
+    "start-server-and-test": "^1.11.7",
+    "styled-components": "^5.2.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "history": "^5.0.0"
+  }
+}

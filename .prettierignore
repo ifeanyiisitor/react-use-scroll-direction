@@ -1,0 +1,6 @@
+dist
+tsconfig.json
+README.md
+.vscode
+.github
+.cache

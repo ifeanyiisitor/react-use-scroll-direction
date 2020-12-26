@@ -1,0 +1,11 @@
+{
+  "baseUrl": "http://localhost:1234",
+  "projectId": "next-app-skeleton",
+  "fixturesFolder": ".cypress/fixtures",
+  "integrationFolder": ".",
+  "pluginsFile": ".cypress/plugins/index.js",
+  "screenshotsFolder": ".cypress/screenshots",
+  "supportFile": ".cypress/support/index.js",
+  "videosFolder": ".cypress/videos",
+  "testFiles": "**/*.cy.{ts,tsx}"
+}
