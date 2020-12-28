@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0",
+  "version": "0.1.0",
   "name": "react-use-scroll-direction",
   "description": "A react hook for detecting the scroll direction of the scrolling window or target element",
   "author": "Ifeanyi Isitor",
