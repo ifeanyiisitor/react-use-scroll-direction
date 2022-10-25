@@ -72,7 +72,7 @@ function SomeComponent () {
   return (
     <div>
       {isScrollingUp && "Up"}
-      <ScrollableElement ref={scrollTarget}>
+      <ScrollableElement ref={scrollTargetRef}>
         <SomeLongContent />
       </ScrollableElement>
     </div>
